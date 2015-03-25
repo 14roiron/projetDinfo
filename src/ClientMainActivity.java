@@ -15,11 +15,8 @@ import javax.swing.JOptionPane;
 public class ClientMainActivity extends JFrame {
 	Pannel pan;
 	Reseau res;
-	
 
 	public static void main(String[] args) {
-		
-		
 
 		new ClientMainActivity(args);
 	}
@@ -27,7 +24,7 @@ public class ClientMainActivity extends JFrame {
 	public ClientMainActivity(String[] args) {
 		pan = new Pannel();
 		this.setTitle("Baby");
-		this.setSize(Pannel.width, Pannel.height+40+40);
+		this.setSize(Pannel.width, Pannel.height + 40 + 40);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setContentPane(pan);
@@ -136,13 +133,10 @@ public class ClientMainActivity extends JFrame {
 			try {
 				res.write();
 			} catch (IOException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			// Comme on dit : la pause s'impose ! Ici, trois millièmes de
-			// seconde
 			try {
-				Thread.sleep(10	);
+				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -172,28 +166,28 @@ public class ClientMainActivity extends JFrame {
 				// Ouverture flux �criture sur socket
 				ecriture = new ObjectOutputStream(client.getOutputStream());
 				lecture = new ObjectInputStream(client.getInputStream());
-				
+
 				// Ouverture flux lecture sur socket
-				
+
 				System.out.println("connsction OK!");
 			} catch (IOException e) {
 				e.printStackTrace();
 				System.exit(0);
 			}
 		}
-		public void write() throws IOException
-		{
+
+		public void write() throws IOException {
 			ObjetClientServeur o = new ObjetClientServeur();
-			o.j0=pan.joueursListe.get(0);
-			o.j1=pan.joueursListe.get(1);
-			//System.out.println("joueur"+o.j1.angle+"   "+pan.joueursListe.get(2).angle);
+			o.j0 = pan.joueursListe.get(0);
+			o.j1 = pan.joueursListe.get(1);
+			// System.out.println("joueur"+o.j1.angle+"   "+pan.joueursListe.get(2).angle);
 			ecriture.writeObject(o);
 			ecriture.reset();
 			ecriture.flush();
 		}
 
 		public void run() {
-			boolean run=true;
+			boolean run = true;
 			while (run) {
 				try {
 					ObjetServeurClient o = (ObjetServeurClient) lecture
@@ -201,11 +195,11 @@ public class ClientMainActivity extends JFrame {
 					pan.balle = o.balle;
 					pan.joueursListe.set(2, o.j2);
 					pan.joueursListe.set(3, o.j3);
-					pan.CompteARebour=o.CompteARebour;
-					pan.ScoreAdversaire=o.ScoreAdversaire;
-					pan.ScoreJoueur=o.ScoreJoueur;
-					pan.terminee=o.terminee;
-					
+					pan.CompteARebour = o.CompteARebour;
+					pan.ScoreAdversaire = o.ScoreAdversaire;
+					pan.ScoreJoueur = o.ScoreJoueur;
+					pan.terminee = o.terminee;
+
 				} catch (ClassNotFoundException | IOException e) {
 					e.printStackTrace();
 					System.exit(0);
@@ -214,7 +208,7 @@ public class ClientMainActivity extends JFrame {
 					Thread.sleep(5);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
-					run=false;
+					run = false;
 					e.printStackTrace();
 				}
 			}

@@ -27,6 +27,12 @@ public class ServeurBaBy extends JFrame {
 	double compteARebour;
 	boolean enContactAvecLaBalle;
 
+	/**
+	 * 
+	 */
+	/**
+	 * 
+	 */
 	public ServeurBaBy() {
 
 		// Initialisations et lancement du serveur
@@ -193,7 +199,7 @@ public class ServeurBaBy extends JFrame {
 
 	private boolean collision(Rectangle d) {
 		if (Collision.CollisionCercleAABB(balle, d)) {
-			if (!enContactAvecLaBalle) {
+			if (!d.enContactAvecLaBalle) {
 				// il y a contacte, il faut g�rer la collision
 				// gestion des contacts que sur les bordures, type E; C,D exclus
 				// car improbables...
@@ -202,7 +208,7 @@ public class ServeurBaBy extends JFrame {
 						&& balle.y + 3 * balle.r / 4 >= d.y
 						&& balle.y - 3 * balle.r / 4 <= (d.y + d.h)) {
 					// balle arrive selon ex et rebondit à droite
-					balle.vx = rebondVitesse(balle.vx, d.vx);
+					balle.vx = - Math.abs(balle.vx) -2* d.vx;
 					b = true;
 				}
 				if (balle.x + balle.r > (d.x + d.w)
@@ -211,7 +217,7 @@ public class ServeurBaBy extends JFrame {
 						&& balle.y - 3 * balle.r / 4 <= (d.y + d.h)) {
 					// balle arrive selon -ex et rebondit à gauche &&
 					// Math.abs(balle.x - d.x) < Math.abs(balle.y - d.y) * 0.95
-					balle.vx =  rebondVitesse(balle.vx, d.vx);
+					balle.vx =  Math.abs(balle.vx) -2* d.vx;
 					b = true;
 				}
 				if (balle.y + balle.r > (d.y + d.h)
@@ -220,7 +226,7 @@ public class ServeurBaBy extends JFrame {
 						&& balle.x - 3 * balle.r / 4 <= (d.x + d.w)) {
 					// balle arrive selon ey et rebondit en haut &&
 					// Math.abs(balle.x - d.x) * 0.95 > Math.abs(balle.y- d.y)
-					balle.vy =  rebondVitesse(balle.vy, d.vy);
+					balle.vy =  Math.abs(balle.vy) -2* d.vy;
 					b = true;
 				}
 				if (balle.y - balle.r < d.y && balle.y + balle.r >= d.y
@@ -228,20 +234,20 @@ public class ServeurBaBy extends JFrame {
 						&& balle.x - 3 * balle.r / 4 <= (d.x + d.w)) {
 					// balle arrive selon -ey et rebondit en bas && balle.x >=
 					// d.x && balle.x <= (d.x + d.w)
-					balle.vy = rebondVitesse(balle.vy, d.vy);
+					balle.vy =  -  Math.abs(balle.vy) -2* d.vy;
 					b = true;
 				}
 				if (b)
-					enContactAvecLaBalle = true;
+					d.enContactAvecLaBalle = true;
 				else {
 					System.err.println("absence de collision");
 					balle.vy = rebondVitesse(balle.vy, d.vy);
 					balle.vx = rebondVitesse(balle.vx, d.vy);
-					enContactAvecLaBalle = true;
+					d.enContactAvecLaBalle = true;
 				}
 			}
 		} else {
-			enContactAvecLaBalle = false;
+			d.enContactAvecLaBalle = false;
 		}
 		return false;
 	}

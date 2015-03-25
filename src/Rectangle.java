@@ -3,6 +3,7 @@ import java.awt.Graphics;
 
 class Rectangle extends DessinObjet {
 	int h, w;// hauteur, largeur
+	public boolean enContactAvecLaBalle;
 
 	public Rectangle(double x, double y, int w, int h, Color c, double vx,
 			double vy) {

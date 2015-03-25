@@ -4,10 +4,14 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -26,9 +30,16 @@ public class Pannel extends JPanel {
 	public double CompteARebour;
 	public boolean terminee;
 	boolean button=false;
+	BufferedImage image;
 
 	public Pannel() {
 		button=false;
+		try {
+			image = ImageIO.read(new File("274_2.jpg"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void CreerConstantes() {
@@ -68,6 +79,8 @@ public class Pannel extends JPanel {
 	public void paintComponent(Graphics g) {
 		g.setColor(Color.white);
 		g.fillRect(0, 0, Pannel.width, Pannel.height);
+		g.drawImage(image, 0, 0, Pannel.width, Pannel.height, null);
+		
 		draw(g);
 
 	}
