@@ -127,7 +127,7 @@ public class ServeurBaBy extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setContentPane(pan);
-		this.setVisible(true);
+		//this.setVisible(true);
 		pan.CreerConstantes();
 		run();
 	}

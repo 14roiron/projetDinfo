@@ -61,7 +61,7 @@ public class Pannel extends JPanel {
 		listeConstanteBUT.clear();
 		listeConstanteBUT.add(but1);
 		listeConstanteBUT.add(but2);
-		balle = new Balle(Pannel.height / 2, Pannel.width / 2, 20, Color.black,
+		balle = new Balle(Pannel.width / 2, Pannel.height / 2, 20, Color.black,
 				-2, 1);
 
 		joueursListe = new ArrayList<Joueurs>();
@@ -112,8 +112,8 @@ public class Pannel extends JPanel {
 		if(CompteARebour!=10)
 		{
 			setOpaque(false);
-			 int xCenter=this.getWidth()/2;
-			 int  yCenter=this.getHeight()/2; 
+			 int xCenter=width/2;
+			 int  yCenter=height/2; 
 			 int r = 30;
 			        g.setColor(Color.white);
 			        g.fillOval(xCenter-r, yCenter-r, 2*r, 2*r);

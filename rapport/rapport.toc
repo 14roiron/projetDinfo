@@ -1,0 +1,70 @@
+\select@language {french}
+\contentsline {part}{I\hspace {1em}Analyse du travail effectu\IeC {\'e}}{2}
+\contentsline {chapter}{\numberline {1}Pr\IeC {\'e}sentation du sujet}{3}
+\contentsline {section}{\numberline {1.1}Principe g\IeC {\'e}n\IeC {\'e}ral}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {section}{\numberline {1.2}L'interface graphique}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{Page d'acceuil}{3}
+\contentsline {paragraph}{Commencer une partie}{4}
+\contentsline {paragraph}{D\IeC {\'e}roulement d'une partie}{4}
+\contentsline {paragraph}{Options}{4}
+\contentsline {chapter}{\numberline {2}Analyse de la solution envisag\IeC {\'e}e et mise-\IeC {\`a}-jour}{5}
+\contentsline {section}{\numberline {2.1}D\IeC {\'e}coupage en modules}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {section}{\numberline {2.2}L'interface graphique (client)}{6}
+\contentsline {paragraph}{ClientMainActivity.java}{6}
+\contentsline {paragraph}{Panel.java}{6}
+\contentsline {paragraph}{DessinObjet.java}{6}
+\contentsline {paragraph}{Panel.java}{6}
+\contentsline {paragraph}{Panel.java}{6}
+\contentsline {paragraph}{Panel.java}{7}
+\contentsline {section}{\numberline {2.3}Le r\IeC {\'e}seau}{7}
+\contentsline {subsection}{\numberline {2.3.1}Le principe g\IeC {\'e}n\IeC {\'e}ral}{7}
+\contentsline {paragraph}{}{7}
+\contentsline {subsection}{\numberline {2.3.2}La partie client}{7}
+\contentsline {paragraph}{ClientBabyfoot.java}{7}
+\contentsline {paragraph}{Client.java}{7}
+\contentsline {paragraph}{PlayerClient.java}{7}
+\contentsline {paragraph}{MatchClient.java}{7}
+\contentsline {paragraph}{ChatClient.java}{7}
+\contentsline {subsection}{\numberline {2.3.3}La partie serveur}{8}
+\contentsline {paragraph}{AbstractServer.java}{8}
+\contentsline {paragraph}{ServerBabyfoot.java}{8}
+\contentsline {paragraph}{PlayerServer.java}{8}
+\contentsline {paragraph}{MatchServer.java}{8}
+\contentsline {paragraph}{ChatServer.java}{8}
+\contentsline {section}{\numberline {2.4}Le c\oe {}ur algorithmique}{8}
+\contentsline {paragraph}{Player.java}{8}
+\contentsline {paragraph}{Utils.java}{8}
+\contentsline {paragraph}{Match.java}{9}
+\contentsline {paragraph}{Collisions.java}{9}
+\contentsline {paragraph}{Database.java}{9}
+\contentsline {chapter}{\numberline {3}\IeC {\'E}ch\IeC {\'e}ancier}{10}
+\contentsline {paragraph}{Ce qui \IeC {\'e}tait pr\IeC {\'e}vu}{10}
+\contentsline {paragraph}{Ce qui a \IeC {\'e}t\IeC {\'e} fait}{10}
+\contentsline {part}{II\hspace {1em}\IeC {\'E}volutions vis-\IeC {\`a}-vis de l'avant-projet}{11}
+\contentsline {paragraph}{}{12}
+\contentsline {paragraph}{Au niveau du d\IeC {\'e}veloppement lui-m\IeC {\^e}me}{12}
+\contentsline {paragraph}{Pour ce qui est de la structure}{12}
+\contentsline {paragraph}{Pour ce qui est du code}{12}
+\contentsline {paragraph}{Choix techniques}{12}
+\contentsline {part}{III\hspace {1em}Explications des choix techniques}{13}
+\contentsline {section}{\numberline {3.1}Le r\IeC {\'e}seau}{14}
+\contentsline {paragraph}{}{14}
+\contentsline {paragraph}{}{14}
+\contentsline {paragraph}{}{14}
+\contentsline {paragraph}{}{14}
+\contentsline {section}{\numberline {3.2}La gestion des barres}{14}
+\contentsline {paragraph}{}{14}
+\contentsline {paragraph}{}{14}
+\contentsline {paragraph}{}{15}
+\contentsline {paragraph}{}{15}
+\contentsline {section}{\numberline {3.3}La gestion du jeu}{15}
+\contentsline {paragraph}{}{15}
+\contentsline {paragraph}{}{15}
+\contentsline {paragraph}{}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {part}{IV\hspace {1em}Le code partiel du programme}{17}
