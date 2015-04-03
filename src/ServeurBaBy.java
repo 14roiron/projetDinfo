@@ -199,7 +199,7 @@ public class ServeurBaBy extends JFrame {
 
 	private boolean collision(Rectangle d) {
 		if (Collision.CollisionCercleAABB(balle, d)) {
-			if (!d.enContactAvecLaBalle) {
+			if (true){//!d.enContactAvecLaBalle) {
 				// il y a contacte, il faut g�rer la collision
 				// gestion des contacts que sur les bordures, type E; C,D exclus
 				// car improbables...
