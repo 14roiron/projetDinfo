@@ -11,10 +11,9 @@ public class Collision {
 	}
 
 	public static boolean CollisionCercleAABB(Balle C1, Rectangle box1) {
-		Rectangle boxCercle = GetBoxAutourCercle(C1); // retourner la bounding
-														// box de l'image
-														// porteuse, ou calculer
-														// la bounding box.
+		Rectangle boxCercle = GetBoxAutourCercle(C1); 
+		// retourner la bounding  box de l'image
+		// porteuse, ou calculer la bounding box.
 		if (!CollisionAABB(box1, boxCercle))
 			return false; // premier test
 		if (CollisionPointCercle(box1.x, box1.y, C1)

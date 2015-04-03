@@ -62,7 +62,7 @@ public class ServeurBaBy extends JFrame {
 				// TODO Auto-generated method stub
 
 				while (true) {
-					// Attente client (bloquant jusqu'à arrivée d'un
+					// Attente client (bloquant jusqu'a arrivee d'un
 					// nouveau
 					// client)
 					System.out.println("Serveur en attente de client...");
@@ -79,7 +79,7 @@ public class ServeurBaBy extends JFrame {
 						int numJoueur = arbitre.numeroDernierJoueur();
 						System.out.println("Connection joueur numero "
 								+ numJoueur + " OK");
-						// Création et lancement du thread gérant le
+						// Creation et lancement du thread gerant le
 						// nouveau
 						// client
 						ThreadBaby t = new ThreadBaby(arbitre, s, in, out);
@@ -92,7 +92,7 @@ public class ServeurBaBy extends JFrame {
 						e.printStackTrace();
 					}
 					// Ouverture du flux pour l'envoi des informations au
-					// client à travers le réseau
+					// client a travers le reseau
 
 				}
 			}
@@ -141,7 +141,7 @@ public class ServeurBaBy extends JFrame {
 	}
 
 	/**
-	 * Envoi de l'état du jeu sur un flux de sortie.
+	 * Envoi de l'etat du jeu sur un flux de sortie.
 	 * 
 	 * @throws IOException
 	 */
@@ -207,7 +207,7 @@ public class ServeurBaBy extends JFrame {
 				if (balle.x - balle.r < d.x && balle.x + balle.r >= d.x
 						&& balle.y + 3 * balle.r / 4 >= d.y
 						&& balle.y - 3 * balle.r / 4 <= (d.y + d.h)) {
-					// balle arrive selon ex et rebondit à droite
+					// balle arrive selon ex et rebondit a droite
 					balle.vx = - Math.abs(balle.vx) -2* d.vx;
 					b = true;
 				}
@@ -215,7 +215,7 @@ public class ServeurBaBy extends JFrame {
 						&& balle.x - balle.r <= (d.x + d.w)
 						&& balle.y + 3 * balle.r / 4 >= d.y
 						&& balle.y - 3 * balle.r / 4 <= (d.y + d.h)) {
-					// balle arrive selon -ex et rebondit à gauche &&
+					// balle arrive selon -ex et rebondit a gauche &&
 					// Math.abs(balle.x - d.x) < Math.abs(balle.y - d.y) * 0.95
 					balle.vx =  Math.abs(balle.vx) -2* d.vx;
 					b = true;
@@ -282,35 +282,6 @@ public class ServeurBaBy extends JFrame {
 				if (!pause && !terminee) {
 					// tabsJoueurs = new Joueurs[4];
 					deplacerballe();
-					/*
-					 * synchronized (listeClients) { if (listeClients.size() >
-					 * 1) { Joueurs[] joueurs; if
-					 * (listeClients.get(1).joueurs[0] != null) { joueurs =
-					 * listeClients.get(0).joueurs; tabsJoueurs[0] = joueurs[0];
-					 * tabsJoueurs[1] = joueurs[1]; } else {
-					 * System.out.println("erreur, nombre de clients biais1"); }
-					 * if (listeClients.get(1).joueurs[0] != null) { joueurs =
-					 * listeClients.get(1).joueurs; tabsJoueurs[2] =
-					 * joueurs[1].numero(2); tabsJoueurs[3] =
-					 * joueurs[0].numero(3); /* pan.listeBordure.add(Collision
-					 * .GetBoxAutourCercle(balle)); Joueur joueur =
-					 * tabsJoueurs[2].joueurs[0]; joueur.rectangle.c =
-					 * Color.green; p: an.listeBordure.add(joueur.rectangle);
-					 * 
-					 * 
-					 * } else {
-					 * System.out.println("erreur, nombre de clients biais2"); }
-					 * 
-					 * } else { System.out.println("erreur, nombre de clients");
-					 * } }
-					 */
-
-					/*
-					 * for (Joueurs j : tabsJoueurs) {
-					 * System.out.print("joueur " + j.angle + "  " +
-					 * j.position); }
-					 */
-
 					verifBut();
 					// System.out.println(tabsJoueurs.length);
 					for (int i = 0; i < 4; i++) {
@@ -342,7 +313,7 @@ public class ServeurBaBy extends JFrame {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				}// partie terminée
+				}// partie terminee
 				else {
 					run = false;
 
@@ -376,7 +347,6 @@ public class ServeurBaBy extends JFrame {
 		balle.x += balle.vx;
 		balle.y += balle.vy;
 		// System.out.println("x" + balle.x + "y" + balle.y);
-
 	}
 
 	private void collisionJoueurs(Joueurs j) {
@@ -412,8 +382,8 @@ public class ServeurBaBy extends JFrame {
 }
 
 /**
- * Classe pour gérer dans un thread les interactions avec un joueur connecté via
- * le réseau.
+ * Classe pour gerer dans un thread les interactions avec un joueur connecte via
+ * le reseau.
  */
 class ThreadBaby extends Thread {
 	private int numeroJoueur;
