@@ -53,49 +53,49 @@ public class ClientMainActivity extends JFrame {
 					if (pan.joueursListe.get(0).Vposition < 0)
 						pan.joueursListe.get(0).Vposition = 0;
 					else
-						pan.joueursListe.get(0).Vposition--;
+						pan.joueursListe.get(0).Vposition=0;//--
 				}
 				if (arg0.getKeyChar() == 's') {
 					if (pan.joueursListe.get(0).Vposition > 0)
 						pan.joueursListe.get(0).Vposition = 0;
 					else
-						pan.joueursListe.get(0).Vposition++;
+						pan.joueursListe.get(0).Vposition=0;//++;
 				}
 				if (arg0.getKeyChar() == 'q') {
 					if (pan.joueursListe.get(0).Vangle < 0)
 						pan.joueursListe.get(0).Vangle = 0;
 					else
-						pan.joueursListe.get(0).Vangle++;
+						pan.joueursListe.get(0).Vangle=0;//++;
 				}
 				if (arg0.getKeyChar() == 'd') {
 					if (pan.joueursListe.get(0).Vangle > 0)
 						pan.joueursListe.get(0).Vangle = 0;
 					else
-						pan.joueursListe.get(0).Vangle--;
+						pan.joueursListe.get(0).Vangle=0;//--;
 				}
 				if (arg0.getKeyChar() == 'y') {
 					if (pan.joueursListe.get(1).Vposition < 0)
 						pan.joueursListe.get(1).Vposition = 0;
 					else
-						pan.joueursListe.get(1).Vposition--;
+						pan.joueursListe.get(1).Vposition=0;//--;
 				}
 				if (arg0.getKeyChar() == 'h') {
 					if (pan.joueursListe.get(1).Vposition > 0)
 						pan.joueursListe.get(1).Vposition = 0;
 					else
-						pan.joueursListe.get(1).Vposition++;
+						pan.joueursListe.get(1).Vposition=0;//++;
 				}
 				if (arg0.getKeyChar() == 'g') {
 					if (pan.joueursListe.get(1).Vangle > 0)
 						pan.joueursListe.get(1).Vangle = 0;
 					else
-						pan.joueursListe.get(1).Vangle++;
+						pan.joueursListe.get(1).Vangle=0;//++;
 				}
 				if (arg0.getKeyChar() == 'j') {
 					if (pan.joueursListe.get(1).Vangle < 0)
 						pan.joueursListe.get(1).Vangle = 0;
 					else
-						pan.joueursListe.get(1).Vangle--;
+						pan.joueursListe.get(1).Vangle=0;//--;
 				}
 
 			}
