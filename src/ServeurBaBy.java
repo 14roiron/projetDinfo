@@ -199,8 +199,8 @@ public class ServeurBaBy extends JFrame {
 
 	private boolean collision(Rectangle d) {
 		if (Collision.CollisionCercleAABB(balle, d)) {
-			if (!d.enContactAvecLaBalle) {
-				// il y a contacte, il faut gerer la collision
+			if (true){//!d.enContactAvecLaBalle) {
+				// il y a contacte, il faut g�rer la collision
 				// gestion des contacts que sur les bordures, type E; C,D exclus
 				// car improbables...
 				boolean b = false;
@@ -332,15 +332,22 @@ public class ServeurBaBy extends JFrame {
 	private void deplacerballe() {
 		final double MAX = 5.;
 		final double MIN = 0.5;
-		balle.vx = (balle.vx > MAX) ? MAX : balle.vx;
-		balle.vx = (balle.vx < -MAX) ? -MAX : balle.vx;
-		balle.vy = (balle.vy > MAX) ? MAX : balle.vy;
-		balle.vy = (balle.vy < -MAX) ? -MAX : balle.vy;
+//		balle.vx = (balle.vx > MAX) ? MAX : balle.vx;
+//		balle.vx = (balle.vx < -MAX) ? -MAX : balle.vx;
+//		balle.vy = (balle.vy > MAX) ? MAX : balle.vy;
+//		balle.vy = (balle.vy < -MAX) ? -MAX : balle.vy;
+//		
+//		balle.vx = (balle.vx < MIN && balle.vx > 0) ? MIN : balle.vx;
+//		balle.vx = (balle.vx > -MIN && balle.vx < 0) ? -MIN : balle.vx;
+//		balle.vy = (balle.vy < MIN && balle.vy > 0) ? MIN : balle.vy;
+//		balle.vy = (balle.vy > -MIN && balle.vy < 0) ? -MIN : balle.vy;
+		double norme = Math.sqrt(balle.vx*balle.vx+balle.vy*balle.vy);
+		balle.vx=(norme<MIN)? MIN*balle.vx/norme : balle.vx;
+		balle.vy=(norme<MIN)? MIN*balle.vy/norme : balle.vy;
 		
-		balle.vx = (balle.vx < MIN && balle.vx > 0) ? MIN : balle.vx;
-		balle.vx = (balle.vx > -MIN && balle.vx < 0) ? -MIN : balle.vx;
-		balle.vy = (balle.vy < MIN && balle.vy > 0) ? MIN : balle.vy;
-		balle.vy = (balle.vy > -MIN && balle.vy < 0) ? -MIN : balle.vy;
+		balle.vx=(norme>MAX)? MAX*balle.vx/norme : balle.vx;
+		balle.vy=(norme>MAX)? MAX*balle.vy/norme : balle.vy;
+		
 		
 		balle.vx *= 0.999;
 		balle.vy *= 0.999;

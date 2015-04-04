@@ -29,14 +29,14 @@ public class Joueurs extends DessinObjet {
 
 		case 1:
 			nombreDeJoueurs = 2;
-			plage = h / 5;
+			plage = h / 6;
 			joueurs = new Joueur[nombreDeJoueurs];
 			joueurs[0] = new Joueur(w / 3, h / 2 - h / 4);
 			joueurs[1] = new Joueur(w / 3, h / 2 + h / 4);
 			break;
 		case 2:
 			nombreDeJoueurs = 2;
-			plage = h / 5;
+			plage = h / 6;
 			joueurs = new Joueur[nombreDeJoueurs];
 			joueurs[0] = new Joueur(w - w / 3, h / 2 - h / 4);
 			joueurs[1] = new Joueur(w - w / 3, h / 2 + h / 4);
@@ -172,8 +172,8 @@ public class Joueurs extends DessinObjet {
 		// System.out.println("Vpos "+Vposition);
 		position += Vposition;
 		angle += Vangle / 50.;
-		if (position > plage + Joueur.h) {
-			position = plage + Joueur.h;
+		if (position > plage) {
+			position = plage;
 		}
 		if (position < -plage) {
 			position = -plage;
