@@ -242,7 +242,7 @@ public class ClientMainActivity extends JFrame {
 					pan.ScoreJoueur = o.ScoreJoueur;
 					pan.terminee = o.terminee;
 
-				} catch (ClassNotFoundException | IOException e) {
+				} catch ( IOException e) {
 					e.printStackTrace();
 					System.exit(0);
 				}
