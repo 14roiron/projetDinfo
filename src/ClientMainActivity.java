@@ -246,7 +246,7 @@ public class ClientMainActivity extends JFrame {
 					e.printStackTrace();
 					System.exit(0);
 				}
-				catch( ClassNotFoundException )
+				catch( ClassNotFoundException e)
 				{}
 				try {
 					Thread.sleep(5);
